@@ -1,4 +1,4 @@
-import React, {useState} from "react"; 
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavigationBar from "./components/NavigationBar";
 import SideBar from "./components/SideBar"
@@ -20,9 +20,8 @@ function App() {
         url: 'https://community-open-weather-map.p.rapidapi.com/forecast',
         params: {
           q: city,
-          units: 'metric',
-          cnt: '10'
-        },
+          units: 'metric'
+          },
         headers: {
           'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
           'x-rapidapi-key': '7ba1ebb4e0msh1ee3c13786d6eacp15f4e9jsn06d6c190f943'

@@ -13,13 +13,18 @@ const Main = ({weatherData}) => {
     const isEmpty = Object.keys(weatherData).length === 0;
 
     if(isEmpty === false){
-     
+      //current date
+      let today = new Date();
+      let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      let dateTime = date + ' ' + time;
+
       country = weatherData.city.country 
       city = weatherData.city.name 
-      temperature = weatherData.list[0].main.temp
+      temperature = Math.round(weatherData.list[0].main.temp)
       //temperatureNight = weatherData.list[0].temp.night
       windSpeed = weatherData.list[0].wind.speed
-      updated = weatherData.list[0].dt_txt
+      updated = dateTime
       pressure = weatherData.list[0].main.pressure
       description = weatherData.list[0].weather[0].description
       visibility = weatherData.list[0].visibility
@@ -39,7 +44,7 @@ const Main = ({weatherData}) => {
         visibility = {visibility}
         humidity = {humidity}
         />
-      <WeatherCard style = {{ml: '12vw'}}/>
+      <WeatherCard />
       <WeatherCard />
       <WeatherCard />
       <WeatherCard />
@@ -73,231 +78,5 @@ Main.defaultProps = {
   description: 'description',
   updated: 'updated'
 }
-
-/*
-Main.propTypes = {
-  weatherData: PropTypes.object
-}
-
-Main.defaultProps = {
-  weatherData: {
-    city: [
-      {
-        country: '',
-        name: '',
-      }
-    ],
-    list: [
-        {
-          0: [ 
-            {
-              main:
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                },
-              visibility: '',
-              wind:{
-                  speed: ''
-                },
-              weather:
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-            }
-          ],
-          1: [ 
-            {
-              main: [
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                }
-              ],
-              visibility: '',
-              wind: [
-                {
-                  speed: ''
-                }
-              ],
-              weather: [
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          2: [ 
-            {
-              main: [
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                }
-              ],
-              visibility: '',
-              wind: [
-                {
-                  speed: ''
-                }
-              ],
-              weather: [
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          3: [ 
-            {
-              main: [
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                }
-              ],
-              visibility: '',
-              wind: [
-                {
-                  speed: ''
-                }
-              ],
-              weather: [
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          4: [ 
-            {
-              main: [
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                }
-              ],
-              visibility: '',
-              wind: [
-                {
-                  speed: ''
-                }
-              ],
-              weather: [
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          5: [ 
-            {
-              main: [
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                }
-              ],
-              visibility: '',
-              wind: [
-                {
-                  speed: ''
-                }
-              ],
-              weather: [
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          6: [ 
-            {
-              main: [
-                {
-                  feels_like: '',
-                  humidity: '',
-                  pressure: '',
-                  temp: ''
-                }
-              ],
-              visibility: '',
-              wind: [
-                {
-                  speed: ''
-                }
-              ],
-              weather: [
-                {
-                  0: [
-                    {
-                      id: '',
-                      main: '',
-                      description: '',
-                      icon: ''
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-        }
-    ],
-  }
-}*/
 
 export default Main

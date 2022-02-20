@@ -17,7 +17,7 @@ const MainCard = ({country, city, temperature, humidity, windSpeed, visibility,
                     {temperature}&#8451;
                 </Card.Text>
                 <Card.Text className="updateHour boldText">
-                    {updated}
+                    Last updated: {updated}
                 </Card.Text>
                 <Card.Text className="weatherDetails boldText">
                     humidity: {humidity} wind speed: {windSpeed} visibility: {visibility} pressure: {pressure}
@@ -50,7 +50,7 @@ MainCard.propTypes = {
     visibility: 0, 
     pressure: 0,
     description: 'description',
-    updated: 'updated'
+    updated: 'date'
   }
 
 export default MainCard
