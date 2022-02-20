@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react'
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
@@ -63,7 +62,8 @@ const NavigationBar = ({onClick, onChange, value}) => {
 
 NavigationBar.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 NavigationBar.defaultProps = {
