@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const MainCard = ({country, city, temperature, humidity, windSpeed, visibility,
     pressure, description, updated}) => {
-    //if the object is empty, we ll use the default props
+   
     return (
         <Card style={{display: 'block'}} 
             className = "mainCard lead">
